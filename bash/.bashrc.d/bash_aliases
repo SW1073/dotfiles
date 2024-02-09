@@ -1,0 +1,56 @@
+# ====== Configurations ======
+## i3
+alias vi3="nvim ~/.config/i3/config"
+alias vi3status="sudo nvim /etc/i3status.conf"
+alias vpolybar="nvim ~/.config/polybar/config.ini"
+alias vpicom="nvim ~/.config/picom/picom.conf"
+## terminal emulators
+alias vkitty="nvim ~/.config/kitty/kitty.conf"
+alias valacritty="nvim ~/.config/alacritty/alacritty.yml"
+alias vtilix="tilix --preferences"
+## nvim
+alias vnvim="nvim ~/.config/nvim/"
+## bash
+alias vbashrc="nvim ~/.bashrc"
+alias vbash=vbashrc
+alias valias="nvim ~/.bashrc.d/bash_aliases"
+## terminal multiplexers
+alias vtmux="nvim ~/.tmux.conf"
+alias vzellij="nvim ~/.config/zellij/config.kdl"
+
+# ====== Screen manipulation ======
+## Second screen
+alias top-on="xrandr --output HDMI-A-0 --auto --above eDP --set TearFree on"
+alias top-off="xrandr --output HDMI-A-0 --off"
+alias bottom-on="xrandr --output eDP --auto --below HDMI-A-0 --set TearFree on"
+alias bottom-off="xrandr --output eDP --off"
+## Eliminate tearing
+alias tearing-off="xrandr --output eDP --set TearFree on"
+alias tearing-on="xrandr --output eDP --set TearFree off"
+
+# ====== Misc ======
+## ls
+alias l="ls -lh"
+alias ll="ls -lha"
+
+## neovim, and not so neo vim
+alias ovim="\vim" ## old vim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+## ssh
+alias raspilan="ssh -p 1073 eloi@el01raspi"
+alias raspiwan="ssh -p 1073 eloi@91.126.21.101"
+
+## tmux workaround para colores
+alias tmux="TERM=xterm-256color tmux"
+
+## LaTex temlate
+alias newtex="cp ~/plantillas-tex/article.tex ."
+
+## Exec quartus docker image
+alias quartus="~/uni/q7/mp/exe_quartus.sh"
+
+## Open files with default program. Easier
+alias open="xdg-open"

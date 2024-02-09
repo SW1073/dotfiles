@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DIRECTORY=$1
+
+if [[ $DIRECTORY = "" ]]; then
+    sudo du -hsx /* | sort -rh | head -n 40
+elif [[ $DIRECTORY = "/" ]]; then
+    sudo du -hsx /* | sort -rh | head -n 40
+elif [[ $DIRECTORY = /* ]]; then
+    sudo du -hsx $DIRECTORY/* | sort -rh | head -n 40
+else
+    sudo du -hsx $PWD/$DIRECTORY/* | sort -rh | head -n 40
+fi
