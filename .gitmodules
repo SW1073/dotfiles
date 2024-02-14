@@ -1,3 +1,7 @@
-[submodule "alacritty/.config/alacritty/.config/alacritty/alacritty-theme"]
-	path = alacritty/.config/alacritty/.config/alacritty/alacritty-theme
+[submodule "alacritty/.config/alacritty/alacritty-theme"]
+	path = alacritty/.config/alacritty/alacritty-theme
 	url = git@github.com:alacritty/alacritty-theme.git
+
+[submodule "kitty/.config/kitty/kitty-themes"]
+	path = kitty/.config/kitty/kitty-themes
+	url = git@github.com:dexpota/kitty-themes.git
