@@ -91,12 +91,13 @@ require("lazy").setup({
 	{'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 
 	-- GCC comment capabilities
-	{
-		'numToStr/Comment.nvim',
-		-- config = function()
-		-- 	require('Comment').setup()
-		-- end
-	},
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
 
 	-- GitSigns
 	{
