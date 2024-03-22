@@ -1,2 +1,5 @@
 nvim/.config/nvim/lazy-lock.json
 vim/.vim/.netrwhist
+misc_scripts/bin/Discord
+discord/.config/discord/*
+!discord/.config/discord/settings.json
