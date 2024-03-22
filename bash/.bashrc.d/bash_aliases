@@ -48,8 +48,9 @@ alias tmux="TERM=xterm-256color tmux"
 ## LaTex temlate
 alias newtex="cp ~/plantillas-tex/article.tex ."
 
-## Exec quartus docker image
+## Exec quartus or modelsim docker image
 alias quartus="~/bin/exe_quartus.sh"
+alias modelsim="~/bin/exe_modelsim.sh"
 
 ## Open files with default program. Easier
 alias open="xdg-open"
