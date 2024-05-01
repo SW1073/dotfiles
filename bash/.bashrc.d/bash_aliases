@@ -19,14 +19,16 @@ alias vtmux="nvim ~/.tmux.conf"
 alias vzellij="nvim ~/.config/zellij/config.kdl"
 
 # ====== Screen manipulation ======
-## Second screen
-alias top-on="xrandr --output HDMI-A-0 --auto --above eDP --set TearFree on"
-alias top-off="xrandr --output HDMI-A-0 --off"
-alias bottom-on="xrandr --output eDP --auto --below HDMI-A-0 --set TearFree on"
-alias bottom-off="xrandr --output eDP --off"
 ## Eliminate tearing
-alias tearing-off="xrandr --output eDP --set TearFree on"
-alias tearing-on="xrandr --output eDP --set TearFree off"
+alias tearing-off="xrandr --output DisplayPort-2\
+                          --mode 1920x1080\
+                          --rate 144\
+                          --set TearFree on"
+
+alias tearing-on="xrandr  --output DisplayPort-2\
+                          -- mode 1920x1080\
+                          --rate 144
+                          --set TearFree off"
 
 # ====== Misc ======
 ## ls
