@@ -1,7 +1,7 @@
 # ====== Configurations ======
 ## i3
 alias vi3="nvim ~/.config/i3/config"
-alias vi3status="sudo nvim /etc/i3status.conf"
+alias vi3status="nvim ~/.config/i3status/config"
 alias vpolybar="nvim ~/.config/polybar/config.ini"
 alias vpicom="nvim ~/.config/picom/picom.conf"
 ## terminal emulators
