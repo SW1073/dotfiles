@@ -113,7 +113,7 @@ end
 
 function ColorMyPencils(color)
     color = color or "gruvbox"
-    -- color = color or "github_dark"
+    -- color = color or "github_dark_dimmed"
     -- color = color or "tokyonight"
 
     if color == "gruvbox" then

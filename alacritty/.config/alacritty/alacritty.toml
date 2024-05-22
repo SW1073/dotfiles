@@ -29,3 +29,10 @@ opacity = 0.9
 [window.class]
 general = "Alacritty"
 instance = "Alacritty"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+render_timer = false

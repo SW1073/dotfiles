@@ -76,7 +76,7 @@ require("lazy").setup({
 	-- LuaLine
 	{
 		'nvim-lualine/lualine.nvim',
-		dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
+		dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
 	},
 
 	-- VimTree
@@ -136,7 +136,20 @@ require("lazy").setup({
 	{"ntpeters/vim-better-whitespace"},
 
 	-- Indentation guides or lines
-	{"lukas-reineke/indent-blankline.nvim"}
+	{"lukas-reineke/indent-blankline.nvim"},
+
+    -- Flutter lol
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
+    }
+
+
 }, opts);
 
 require("eloi")

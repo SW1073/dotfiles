@@ -1,23 +1,19 @@
-local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  -- default mappings
-  api.config.mappings.default_on_attach(bufnr)
-
-  local view = require "nvim-tree.view"
-  view.side = "right"
-
-  -- custom mappings
-  vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
-end
-
--- pass to setup along with your other options
-require("nvim-tree").setup {
-  ---
-  on_attach = my_on_attach,
-  ---
-}
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 45,
+    side = "right",
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+  },
+})
+vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')

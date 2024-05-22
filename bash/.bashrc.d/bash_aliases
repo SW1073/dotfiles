@@ -14,6 +14,7 @@ alias vnvim="nvim ~/.config/nvim/"
 alias vbashrc="nvim ~/.bashrc"
 alias vbash=vbashrc
 alias valias="nvim ~/.bashrc.d/bash_aliases"
+alias venv="nvim ~/.bashrc.d/bash_env"
 ## terminal multiplexers
 alias vtmux="nvim ~/.tmux.conf"
 alias vzellij="nvim ~/.config/zellij/config.kdl"
