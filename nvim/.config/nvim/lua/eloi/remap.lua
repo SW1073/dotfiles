@@ -23,6 +23,8 @@ map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 
 map('n', '<leader>rf', vim.lsp.buf.rename, {})
 
+map('n', '<C-t>', '<Cmd>terminal<CR>', opts)
+map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 map("n", ",,", "<Cmd>nohl<CR>", opts)
 
@@ -45,17 +47,17 @@ map("v", "<left>", "<nop>", opts)
 map("v", "<right>", "<nop>", opts)
 
 -- Salvavidas para parentesis, corchetes y claudators
-map('i', '{<CR>', '{<CR>}<Esc>ko', opts)
-map('i', '[<CR>', '[<CR>]<Esc>ko', opts)
-map('i', '(<CR>', '(<CR>)<Esc>ko', opts)
-
-map('i', '{}', '{}<Right>', opts)
-map('i', '[]', '[]<Right>', opts)
-map('i', '()', '()<Right>', opts)
-map('i', '""', '""<Right>', opts)
-
-map('i', '(', '()<Left>', opts)
-map('i', '{', '{}<Left>', opts)
-map('i', '[', '[]<Left>', opts)
-map('i', '"', '""<Left>', opts)
-map('i', "'", "''<Left>", opts)
+-- map('i', '{<CR>', '{<CR>}<Esc>ko', opts)
+-- map('i', '[<CR>', '[<CR>]<Esc>ko', opts)
+-- map('i', '(<CR>', '(<CR>)<Esc>ko', opts)
+--
+-- map('i', '{}', '{}<Right>', opts)
+-- map('i', '[]', '[]<Right>', opts)
+-- map('i', '()', '()<Right>', opts)
+-- map('i', '""', '""<Right>', opts)
+--
+-- map('i', '(', '()<Left>', opts)
+-- map('i', '{', '{}<Left>', opts)
+-- map('i', '[', '[]<Left>', opts)
+-- map('i', '"', '""<Left>', opts)
+-- map('i', "'", "''<Left>", opts)

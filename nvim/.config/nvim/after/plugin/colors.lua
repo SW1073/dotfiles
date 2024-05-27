@@ -10,8 +10,7 @@ function ConfigureGruvbox()
             emphasis = true,
             comments = true,
             operators = false,
-            folds = true,
-        },
+            folds = true, },
         strikethrough = true,
         invert_selection = false,
         invert_signs = false,
@@ -112,9 +111,10 @@ function ConfigureTokyoNight()
 end
 
 function ColorMyPencils(color)
-    color = color or "gruvbox"
+    -- color = color or "gruvbox"
     -- color = color or "github_dark"
     -- color = color or "tokyonight"
+    color = color or "kanagawa"
 
     if color == "gruvbox" then
         ConfigureGruvbox()

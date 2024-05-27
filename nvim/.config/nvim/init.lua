@@ -126,9 +126,6 @@ require("lazy").setup({
 	-- Syntax highlighting for kitty configuration
 	{"fladson/vim-kitty"},
 
-	-- OneDark colorscheme (atom)
-	{"navarasu/onedark.nvim"},
-
 	-- Git blame
 	{"f-person/git-blame.nvim"},
 
@@ -136,7 +133,16 @@ require("lazy").setup({
 	{"ntpeters/vim-better-whitespace"},
 
 	-- Indentation guides or lines
-	{"lukas-reineke/indent-blankline.nvim"}
+	{"lukas-reineke/indent-blankline.nvim"},
+
+
+    -- Lazy
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+    },
+
+    {"rebelot/kanagawa.nvim"}
 }, opts);
 
 require("eloi")
