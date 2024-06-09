@@ -101,12 +101,11 @@ require("lazy").setup({
 
 	-- GitSigns
 	{
-		'lewis6991/gitsigns.nvim',
-		version = 'release' -- To  the latest release (do not use this if you run Neovim nightly or dev builds!)
+		'lewis6991/gitsigns.nvim'
 	},
 
 	-- Github copilot
-	{'github/copilot.vim'},
+	-- {'github/copilot.vim'},
 
 	-- Tokyo colorscheme
 	{'folke/tokyonight.nvim'},
@@ -126,9 +125,6 @@ require("lazy").setup({
 	-- Syntax highlighting for kitty configuration
 	{"fladson/vim-kitty"},
 
-	-- OneDark colorscheme (atom)
-	{"navarasu/onedark.nvim"},
-
 	-- Git blame
 	{"f-person/git-blame.nvim"},
 
@@ -147,7 +143,20 @@ require("lazy").setup({
             'stevearc/dressing.nvim', -- optional for vim.ui.select
         },
         config = true,
-    }
+    },
+
+    -- Kanagawa
+    {"rebelot/kanagawa.nvim"},
+
+	-- OneDark colorscheme (atom)
+	-- {"navarasu/onedark.nvim"}, -- Fa segles que no el mantenen. Fatal
+    {
+      "olimorris/onedarkpro.nvim",
+      priority = 1000, -- Ensure it loads first
+    },
+
+    -- Packer
+    { "sindrets/diffview.nvim" }
 
 
 }, opts);

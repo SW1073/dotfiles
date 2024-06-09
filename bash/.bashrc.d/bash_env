@@ -1,6 +1,6 @@
 # Path
 # User specific environment
-DESIRED_USER_PATH="$HOME/.local/bin:$HOME/bin:.:$HOME/opt/eines-sisa/bin:$HOME/opt/flutter-sdk/flutter/bin"
+DESIRED_USER_PATH="$HOME/.local/bin:$HOME/bin:.:$HOME/opt/eines-sisa/bin:$HOME/opt/flutter-sdk/flutter/bin:$HOME/.config/emacs/bin"
 if ! [[ "$PATH" =~ "$DESIRED_USER_PATH:" ]]
 then
     PATH="$DESIRED_USER_PATH:$PATH"
