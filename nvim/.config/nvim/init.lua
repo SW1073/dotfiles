@@ -155,9 +155,22 @@ require("lazy").setup({
       priority = 1000, -- Ensure it loads first
     },
 
-    -- Packer
-    { "sindrets/diffview.nvim" }
+    -- Diffview
+    { "sindrets/diffview.nvim" },
 
+    -- Outline (Symbols outline)
+    {
+        "hedyhli/outline.nvim",
+        config = function()
+            -- Example mapping to toggle outline
+            vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+            { desc = "Toggle Outline" })
+
+            require("outline").setup {
+                -- Your setup opts here (leave empty to use defaults)
+            }
+        end,
+    }
 
 }, opts);
 

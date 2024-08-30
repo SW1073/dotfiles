@@ -22,7 +22,7 @@ function ConfigureGruvbox()
         palette_overrides = {},
         overrides = {},
         dim_inactive = false,
-        -- transparent_mode = true,
+        transparent_mode = true,
     })
 end
 
@@ -115,6 +115,7 @@ function ColorMyPencils(color)
     color = color or "gruvbox"
     -- color = color or "github_dark_dimmed"
     -- color = color or "tokyonight"
+    -- color = color or "gruber-darker"
 
     if color == "gruvbox" then
         ConfigureGruvbox()
@@ -126,8 +127,8 @@ function ColorMyPencils(color)
     vim.cmd.colorscheme(color)
 
     -- make the background transparent
-    -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-    -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+    vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+    vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
 
 
