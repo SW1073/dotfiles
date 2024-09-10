@@ -27,6 +27,5 @@ vim.opt.fileencoding="utf-8"
 -- Line on the same row as cursor
 vim.opt.cursorline = true
 
--- Hightlight trailing spaces
--- vim.opt.list = true
--- vim.opt.listchars = {tab = "»·", trail = "·", nbsp = "␣"}
+-- Line on the same column as cursor
+vim.opt.cursorcolumn = true

@@ -102,11 +102,7 @@ require("lazy").setup({
 	-- GitSigns
 	{
 		'lewis6991/gitsigns.nvim',
-		version = 'release' -- To  the latest release (do not use this if you run Neovim nightly or dev builds!)
 	},
-
-	-- Github copilot
-	{'github/copilot.vim'},
 
 	-- Tokyo colorscheme
 	{'folke/tokyonight.nvim'},
@@ -142,7 +138,10 @@ require("lazy").setup({
         priority = 1000, -- Ensure it loads first
     },
 
-    {"rebelot/kanagawa.nvim"}
+    {"rebelot/kanagawa.nvim"},
+
+    {"sindrets/diffview.nvim"}
+
 }, opts);
 
 require("eloi")
