@@ -72,7 +72,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 
 # kill focused window
@@ -186,27 +185,27 @@ bindsym $mod+Shift+i exec --no-startup-id setxkbmap -layout es
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym ntilde resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -223,20 +222,24 @@ client.background       #FFFFFF
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command exec i3status
-  colors {
-    background #000000
-    statusline #EBDBB2
-    separator  #666666
-
-    # focused_workspace  #83CAFA #51A2DA #FFFFFF
-    focused_workspace  #83CAFA #98971A #FFFFFF
-    active_workspace   #3C6EB4 #294172 #FFFFFF
-    inactive_workspace #8C8C8C #4C4C4C #888888
-    urgent_workspace   #EC69A0 #DB3279 #FFFFFF
-    binding_mode       #b691d3 #A07CBC #FFFFFF
-  }
+    status_command i3status
+    position bottom
+    font pango:DejaVu Sans Mono 11
+    tray_output primary
+    # padding 3px 0
+    # tray_padding 5px
+    # workspace_min_width 50
+    # separator_symbol "|"
+    # colors {
+    #     background #000000
+    #     statusline #EBDBB2
+    #     separator  #666666
+    #
+    #     focused_workspace  #83CAFA #51A2DA #FFFFFF
+    #     focused_workspace  #83CAFA #98971A #FFFFFF
+    #     active_workspace   #3C6EB4 #294172 #FFFFFF
+    #     inactive_workspace #8C8C8C #4C4C4C #888888
+    #     urgent_workspace   #EC69A0 #DB3279 #FFFFFF
+    #     binding_mode       #b691d3 #A07CBC #FFFFFF
+    # }
 }
-
-# lauch polybar. this should be done through a script, but this is a quick fix
-# exec_always --no-startup-id ~/.config/polybar/launch.sh &

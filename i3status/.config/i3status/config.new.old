@@ -61,7 +61,7 @@ battery all {
 }
 
 tztime local {
-    format = "   %a %d-%m-%Y "
+    format = "   %A %d-%m-%Y "
 }
 
 time {
@@ -69,10 +69,10 @@ time {
 }
 
 volume master {
-    format = "   %volume "
+    # format = "   %volume "
     # format = "<span color='#00BFA5' size='large'> </span> <span bgcolor='#00BFA5' foreground='black'> %volume </span>"
-    # format_muted = "<span color='#D32F2F' size='large'> </span> <span bgcolor='#D32F2F' foreground='black'> %volume </span>"
-    format_muted = "   %volume "
+    # format_muted = "<span color='#D32F2F'> </span> <span></span>"
+    # format_muted = "   %volume "
     device = "default"
     mixer = "Master"
     mixer_idx = 0
