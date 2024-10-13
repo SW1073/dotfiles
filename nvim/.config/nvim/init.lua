@@ -71,7 +71,15 @@ require("lazy").setup({
 	},
 
 	-- VimTeX
-	{ 'lervag/vimtex' },
+    -- {
+    --     "lervag/vimtex",
+    --     lazy = false,     -- we don't want to lazy load VimTeX
+    --     -- tag = "v2.15", -- uncomment to pin to a specific release
+    --     init = function()
+    --         -- VimTeX configuration goes here, e.g.
+    --         vim.g.vimtex_view_method = "zathura"
+    --     end
+    -- },
 
 	-- LuaLine
 	{
@@ -115,9 +123,6 @@ require("lazy").setup({
 
 	-- Tsoding colorscheme (gruber-darker)
 	{ "blazkowolf/gruber-darker.nvim", },
-
-	-- Cappuccin colorscheme
-	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-- Syntax highlighting for kitty configuration
 	{"fladson/vim-kitty"},

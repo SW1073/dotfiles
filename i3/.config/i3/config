@@ -26,8 +26,8 @@ font pango:monospace 10
 exec --no-startup-id picom -CGb
 
 ## WALLPAPER AMB FEH
-exec --no-startup-id feh --bg-fill -zsF ~/Wallpapers/
-bindsym $mod+Shift+b exec --no-startup-id feh --randomize --bg-fill -zsF ~/Wallpapers/
+exec --no-startup-id feh --bg-fill -zsF ~/dotfiles-main/wallpapers/WallpapersCurro/
+bindsym $mod+Shift+b exec --no-startup-id feh --randomize --bg-fill -zsF ~/dotfiles-main/wallpapers/WallpapersCurro/
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart

@@ -1,4 +1,4 @@
-import = ["/home/eloi/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+import = ["~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"]
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
