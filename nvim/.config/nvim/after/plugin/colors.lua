@@ -113,8 +113,8 @@ end
 function ColorMyPencils(color)
     -- color = color or "gruvbox"
     -- color = color or "github_dark"
-    color = color or "tokyonight"
-    -- color = color or "kanagawa"
+    -- color = color or "tokyonight"
+    color = color or "kanagawa"
     -- color = color or "kanagawa-dragon"
     -- color = color or "gruber-darker"
 

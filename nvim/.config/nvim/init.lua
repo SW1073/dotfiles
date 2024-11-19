@@ -145,7 +145,23 @@ require("lazy").setup({
 
     {"rebelot/kanagawa.nvim"},
 
-    {"sindrets/diffview.nvim"}
+    {"sindrets/diffview.nvim"},
+
+    {
+        "hedyhli/outline.nvim",
+        config = function()
+            -- Example mapping to toggle outline
+            vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+            { desc = "Toggle Outline" })
+
+            require("outline").setup {
+                -- Your setup opts here (leave empty to use defaults)
+            }
+        end,
+    },
+
+    -- Greyscalc colorscheme
+    {"LuRsT/austere.vim"}
 
 }, opts);
 

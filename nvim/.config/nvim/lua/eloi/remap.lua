@@ -30,6 +30,9 @@ map("n", ",,", "<Cmd>nohl<CR>", opts)
 
 map("n", "<leader>gb", "<Cmd>GitBlameToggle<CR>", opts)
 
+map ("n", '<leader>y', '"+y', opts)
+map ("v", '<leader>y', '"+y', opts)
+
 -- Disable arrow keys, Let's use hjkl and break the habit
 -- map("n", "<up>", "<nop>", opts)
 -- map("n", "<down>", "<nop>", opts)
