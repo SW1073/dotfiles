@@ -1,7 +1,7 @@
 import = ["~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"]
 
 [font]
-size = 8
+size = 14
 normal      = {family = "JetBrainsMono Nerd Font", style = "Regular"}
 bold        = {family = "JetBrainsMono Nerd Font", style = "Bold"}
 italic      = {family = "JetBrainsMono Nerd Font", style = "Italic"}
@@ -15,7 +15,7 @@ multiplier = 3
 program = "/usr/bin/bash"
 
 [window]
-opacity = 0.9
+opacity = 0.95
 
 [window.class]
 general = "Alacritty"

@@ -160,8 +160,11 @@ require("lazy").setup({
         end,
     },
 
-    -- Greyscalc colorscheme
-    {"LuRsT/austere.vim"}
+    -- Greyscale colorscheme
+    {"LuRsT/austere.vim"},
+
+    -- xCode colorscheme
+    {"lunacookies/vim-colors-xcode"}
 
 }, opts);
 
