@@ -33,6 +33,8 @@ map("n", "<leader>gb", "<Cmd>GitBlameToggle<CR>", opts)
 map ("n", '<leader>y', '"+y', opts)
 map ("v", '<leader>y', '"+y', opts)
 
+map("n", "gl", vim.diagnostic.open_float, opts)
+
 -- Disable arrow keys, Let's use hjkl and break the habit
 -- map("n", "<up>", "<nop>", opts)
 -- map("n", "<down>", "<nop>", opts)

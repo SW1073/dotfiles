@@ -34,7 +34,7 @@ function ConfigureGitHubCS()
             compile_file_suffix = '_compiled', -- Compiled file suffix
             hide_end_of_buffer = true, -- Hide the '~' character at the end of the buffer for a cleaner look
             hide_nc_statusline = true, -- Override the underline style for non-active statuslines
-            transparent = true,       -- Disable setting background
+            transparent = false,       -- Disable setting background
             terminal_colors = true,    -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
             dim_inactive = false,      -- Non focused panes set to alternative background
             module_default = true,     -- Default enable value for modules
@@ -58,7 +58,7 @@ function ConfigureGitHubCS()
             darken = {                 -- Darken floating windows and sidebar-like windows
                 floats = false,
                 sidebars = {
-                    enabled = true,
+                    enable = true,
                     list = {},             -- Apply dark background to specific windows
                 },
             },
@@ -112,9 +112,9 @@ end
 
 function ColorMyPencils(color)
     -- color = color or "gruvbox"
-    -- color = color or "github_dark"
-    -- color = color or "tokyonight"
-    color = color or "kanagawa"
+    -- color = color or "github_dark_dimmed"
+    color = color or "tokyonight"
+    -- color = color or "kanagawa"
     -- color = color or "kanagawa-dragon"
     -- color = color or "gruber-darker"
 
@@ -122,8 +122,8 @@ function ColorMyPencils(color)
         ConfigureGruvbox()
     elseif color == "github_dark" then
         ConfigureGitHubCS()
-    elseif color == "tokyonight" then
-        ConfigureTokyoNight()
+    -- elseif color == "tokyonight" then
+    --     ConfigureTokyoNight()
     end
     vim.cmd.colorscheme(color)
 

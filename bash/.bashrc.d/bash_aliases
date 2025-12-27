@@ -30,8 +30,8 @@ alias top-off="xrandr --output HDMI-1 --off"
 
 # ====== Misc ======
 ## ls
-alias l="ls -lh"
-alias ll="ls -lha"
+alias l="ls -lh --group-directories-first"
+alias ll="ls -lha --group-directories-first"
 
 ## neovim, and not so neo vim
 alias ovim="\vim" ## old vim
