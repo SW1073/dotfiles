@@ -2,7 +2,7 @@
 -- local cmd = vim.lsp.rpc.connect('127.0.0.1', port)
 -- local pipe = '/tmp/godot.pipe' -- I use /tmp/godot.pipe
 --
--- require("lspconfig").gdscript.setup({})
+-- vim.lsp.config().gdscript.setup({})
 --
 -- vim.lsp.start({
 --   name = 'Godot',

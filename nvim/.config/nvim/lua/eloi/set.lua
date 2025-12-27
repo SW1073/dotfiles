@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 -- realtive line numbers and stuff
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- 4 tab indenting ftw

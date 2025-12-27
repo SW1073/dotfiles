@@ -45,30 +45,36 @@ require("lazy").setup({
 	-- Treesitter
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
+    -- Hot new chick in town
+    { 'saghen/blink.cmp' },
+    -- -- OG
+	-- {'hrsh7th/nvim-cmp'},
+
+    {'williamboman/mason.nvim'},
+
 	-- The Foking LSP
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
-			{'hrsh7th/cmp-path'},         -- Optional
-			{'saadparwaiz1/cmp_luasnip'}, -- Optional
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},             -- Required
-			{'rafamadriz/friendly-snippets'}, -- Optional
-		}
-
-	},
+	-- {
+	-- 	'VonHeikemen/lsp-zero.nvim',
+	-- 	branch = 'v1.x',
+	-- 	dependencies = {
+	-- 		-- LSP Support
+	-- 		{'neovim/nvim-lspconfig'},             -- Required
+	-- 		{'williamboman/mason.nvim'},           -- Optional
+	-- 		{'williamboman/mason-lspconfig.nvim'}, -- Optional
+	--
+	-- 		-- Autocompletion
+	-- 		{'hrsh7th/cmp-nvim-lsp'},     -- Required
+	-- 		{'hrsh7th/cmp-buffer'},       -- Optional
+	-- 		{'hrsh7th/cmp-path'},         -- Optional
+	-- 		{'saadparwaiz1/cmp_luasnip'}, -- Optional
+	-- 		{'hrsh7th/cmp-nvim-lua'},     -- Optional
+	--
+	-- 		-- Snippets
+	-- 		{'L3MON4D3/LuaSnip'},             -- Required
+	-- 		{'rafamadriz/friendly-snippets'}, -- Optional
+	-- 	}
+	--
+	-- },
 
 	-- VimTeX
     -- {
@@ -95,7 +101,6 @@ require("lazy").setup({
 	},
 
 	-- BarBar
-	{'nvim-tree/nvim-web-devicons'},
 	{'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
 
 	-- GCC comment capabilities
@@ -108,9 +113,7 @@ require("lazy").setup({
     },
 
 	-- GitSigns
-	{
-		'lewis6991/gitsigns.nvim',
-	},
+	{ 'lewis6991/gitsigns.nvim' },
 
 	-- Tokyo colorscheme
 	{'folke/tokyonight.nvim'},
@@ -137,14 +140,16 @@ require("lazy").setup({
 	{"lukas-reineke/indent-blankline.nvim"},
 
 
-    -- Lazy
+    -- OneDark colorscheme
     {
         "olimorris/onedarkpro.nvim",
         priority = 1000, -- Ensure it loads first
     },
 
+    -- Kanagawa colorscheme
     {"rebelot/kanagawa.nvim"},
 
+    -- DiffView plugin
     {"sindrets/diffview.nvim"},
 
     {
@@ -164,7 +169,31 @@ require("lazy").setup({
     {"LuRsT/austere.vim"},
 
     -- xCode colorscheme
-    {"lunacookies/vim-colors-xcode"}
+    {"lunacookies/vim-colors-xcode"},
+
+    {
+        "nvim-neorg/neorg",
+        lazy = false,
+        version = "*",
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.concealer"] = {},
+                    ["core.dirman"] = {
+                        config = {
+                            workspaces = {
+                                neorg = "~/neorg",
+                            },
+                            default_workspace = "neorg",
+                        },
+                    },
+                },
+            }
+            vim.wo.foldlevel = 99
+            vim.wo.conceallevel = 2
+        end,
+    },
 
 }, opts);
 
