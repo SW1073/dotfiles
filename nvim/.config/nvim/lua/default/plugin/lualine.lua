@@ -1,3 +1,8 @@
+vim.pack.add({
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' }, -- dependency
+	{ src = 'https://github.com/nvim-lualine/lualine.nvim' },
+})
+
 require('lualine').setup {
   options = {
     icons_enabled = true,

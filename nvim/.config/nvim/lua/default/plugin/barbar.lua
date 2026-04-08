@@ -1,4 +1,8 @@
--- Set barbar's options
+vim.pack.add({
+    { src = 'https://github.com/nvim-tree/nvim-web-devicons' }, -- dependency
+	{ src = 'https://github.com/romgrk/barbar.nvim' },
+})
+
 require'bufferline'.setup {
   -- Enable/disable animations
   animation = true,

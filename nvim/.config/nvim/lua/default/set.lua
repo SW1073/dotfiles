@@ -29,3 +29,9 @@ vim.opt.cursorline = true
 
 -- Line on the same column as cursor
 vim.opt.cursorcolumn = true
+
+-- Sergio's magic
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
+vim.opt.undofile = true

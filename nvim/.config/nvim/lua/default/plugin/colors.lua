@@ -1,3 +1,17 @@
+vim.pack.add({
+    { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
+    { src = 'https://github.com/projekt0n/github-nvim-theme' },
+    { src = 'https://github.com/shaunsingh/solarized.nvim' },
+    { src = 'https://github.com/tanvirtin/monokai.nvim' },
+	{ src = 'https://github.com/folke/tokyonight.nvim' },
+	{ src = 'https://github.com/blazkowolf/gruber-darker.nvim' },
+    { src = 'https://github.com/rebelot/kanagawa.nvim' },
+    { src = 'https://github.com/LuRsT/austere.vim'},
+    { src = 'https://github.com/lunacookies/vim-colors-xcode' },
+    { src = 'https://github.com/olimorris/onedarkpro.nvim' },
+})
+
+
 function ConfigureGruvbox()
     -- Default options:
     require("gruvbox").setup({
@@ -110,10 +124,37 @@ function ConfigureTokyoNight()
     })
 end
 
+function ConfigureKanagawa()
+    require('kanagawa').setup({
+        compile = false,             -- enable compiling the colorscheme
+        undercurl = true,            -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true},
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = false,         -- do not set background color
+        dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+        terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+        colors = {                   -- add/modify theme and palette colors
+            palette = {},
+            theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        },
+        overrides = function(colors) -- add/modify highlights
+            return {}
+        end,
+        theme = "wave",              -- Load "wave" theme when 'background' option is not set
+        background = {               -- map the value of 'background' option to a theme
+            dark = "wave",           -- try "dragon" !
+            light = "lotus"
+        },
+    })
+end
+
 function ColorMyPencils(color)
-    -- color = color or "gruvbox"
+    color = color or "gruvbox"
     -- color = color or "github_dark_dimmed"
-    color = color or "tokyonight"
+    -- color = color or "tokyonight"
     -- color = color or "kanagawa"
     -- color = color or "kanagawa-dragon"
     -- color = color or "gruber-darker"
@@ -122,8 +163,10 @@ function ColorMyPencils(color)
         ConfigureGruvbox()
     elseif color == "github_dark" then
         ConfigureGitHubCS()
-    -- elseif color == "tokyonight" then
-    --     ConfigureTokyoNight()
+    elseif color == "tokyonight" then
+        ConfigureTokyoNight()
+    elseif color == "kanagawa" then
+        ConfigureKanagawa()
     end
     vim.cmd.colorscheme(color)
 

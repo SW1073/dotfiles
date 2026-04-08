@@ -28,8 +28,6 @@ map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 map("n", ",,", "<Cmd>nohl<CR>", opts)
 
-map("n", "<leader>gb", "<Cmd>GitBlameToggle<CR>", opts)
-
 map ("n", '<leader>y', '"+y', opts)
 map ("v", '<leader>y', '"+y', opts)
 

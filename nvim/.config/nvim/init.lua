@@ -1,200 +1,108 @@
--- Install Lazy.nvim package manager in case it ain't yet installed
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
--- set leader BEFORE setting up lazy nvim
+-- set leader BEFORE setting up anything else
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- setup lazy lol
-require("lazy").setup({
-	-- Telescope
-	{
-		'nvim-telescope/telescope.nvim',
-		dependencies = {{'nvim-lua/plenary.nvim'}}
-	},
-
-	-- Gruvbox colorscheme
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = true,
-		opts = ...
-	},
-	--  { "morhetz/gruvbox" } -- original, pero no es pot configurar tant benne
-
-	-- Github colorscheme
-	{ 'projekt0n/github-nvim-theme' },
-
-	-- Solarized colorscheme
-	{ 'shaunsingh/solarized.nvim' },
-
-	-- Monokai colorscheme
-	{ 'tanvirtin/monokai.nvim' },
-
-	-- Treesitter
-	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-
-    -- Hot new chick in town
-    { 'saghen/blink.cmp' },
-    -- -- OG
-	-- {'hrsh7th/nvim-cmp'},
-
-    {'williamboman/mason.nvim'},
-
-	-- The Foking LSP
-	-- {
-	-- 	'VonHeikemen/lsp-zero.nvim',
-	-- 	branch = 'v1.x',
-	-- 	dependencies = {
-	-- 		-- LSP Support
-	-- 		{'neovim/nvim-lspconfig'},             -- Required
-	-- 		{'williamboman/mason.nvim'},           -- Optional
-	-- 		{'williamboman/mason-lspconfig.nvim'}, -- Optional
-	--
-	-- 		-- Autocompletion
-	-- 		{'hrsh7th/cmp-nvim-lsp'},     -- Required
-	-- 		{'hrsh7th/cmp-buffer'},       -- Optional
-	-- 		{'hrsh7th/cmp-path'},         -- Optional
-	-- 		{'saadparwaiz1/cmp_luasnip'}, -- Optional
-	-- 		{'hrsh7th/cmp-nvim-lua'},     -- Optional
-	--
-	-- 		-- Snippets
-	-- 		{'L3MON4D3/LuaSnip'},             -- Required
-	-- 		{'rafamadriz/friendly-snippets'}, -- Optional
-	-- 	}
-	--
-	-- },
-
-	-- VimTeX
-    -- {
-    --     "lervag/vimtex",
-    --     lazy = false,     -- we don't want to lazy load VimTeX
-    --     -- tag = "v2.15", -- uncomment to pin to a specific release
-    --     init = function()
-    --         -- VimTeX configuration goes here, e.g.
-    --         vim.g.vimtex_view_method = "zathura"
-    --     end
-    -- },
-
-	-- LuaLine
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
-	},
-
-	-- VimTree
-	{
-		'nvim-tree/nvim-tree.lua',
-		dependencies = 'nvim-tree/nvim-web-devicons' -- optional, for file icons
-		-- tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	},
-
-	-- BarBar
-	{'romgrk/barbar.nvim', dependencies = 'nvim-web-devicons'},
-
-	-- GCC comment capabilities
-    {
-        'numToStr/Comment.nvim',
-        opts = {
-            -- add any options here
-        },
-        lazy = false,
-    },
-
-	-- GitSigns
-	{ 'lewis6991/gitsigns.nvim' },
-
-	-- Tokyo colorscheme
-	{'folke/tokyonight.nvim'},
-
-	-- Markdown preview
-	{
-		"iamcco/markdown-preview.nvim",
-		build = function() vim.fn["mkdp#util#install"]() end,
-	},
-
-	-- Tsoding colorscheme (gruber-darker)
-	{ "blazkowolf/gruber-darker.nvim", },
-
-	-- Syntax highlighting for kitty configuration
-	{"fladson/vim-kitty"},
-
-	-- Git blame
-	{"f-person/git-blame.nvim"},
-
-	-- Trailing spaces
-	{"ntpeters/vim-better-whitespace"},
-
-	-- Indentation guides or lines
-	{"lukas-reineke/indent-blankline.nvim"},
+-- UI things
 
 
-    -- OneDark colorscheme
-    {
-        "olimorris/onedarkpro.nvim",
-        priority = 1000, -- Ensure it loads first
-    },
 
-    -- Kanagawa colorscheme
-    {"rebelot/kanagawa.nvim"},
 
-    -- DiffView plugin
-    {"sindrets/diffview.nvim"},
+-- ({
+--     -- Hot new chick in town
+--     { 'saghen/blink.cmp' },
+--     -- -- OG
+-- 	-- {'hrsh7th/nvim-cmp'},
+--
+-- 	-- The Foking LSP
+-- 	-- {
+-- 	-- 	'VonHeikemen/lsp-zero.nvim',
+-- 	-- 	branch = 'v1.x',
+-- 	-- 	dependencies = {
+-- 	-- 		-- LSP Support
+-- 	-- 		{'neovim/nvim-lspconfig'},             -- Required
+-- 	-- 		{'williamboman/mason.nvim'},           -- Optional
+-- 	-- 		{'williamboman/mason-lspconfig.nvim'}, -- Optional
+-- 	--
+-- 	-- 		-- Autocompletion
+-- 	-- 		{'hrsh7th/cmp-nvim-lsp'},     -- Required
+-- 	-- 		{'hrsh7th/cmp-buffer'},       -- Optional
+-- 	-- 		{'hrsh7th/cmp-path'},         -- Optional
+-- 	-- 		{'saadparwaiz1/cmp_luasnip'}, -- Optional
+-- 	-- 		{'hrsh7th/cmp-nvim-lua'},     -- Optional
+-- 	--
+-- 	-- 		-- Snippets
+-- 	-- 		{'L3MON4D3/LuaSnip'},             -- Required
+-- 	-- 		{'rafamadriz/friendly-snippets'}, -- Optional
+-- 	-- 	}
+-- 	--
+-- 	-- },
+--
+-- 	-- VimTeX
+--     -- {
+--     --     "lervag/vimtex",
+--     --     lazy = false,     -- we don't want to lazy load VimTeX
+--     --     -- tag = "v2.15", -- uncomment to pin to a specific release
+--     --     init = function()
+--     --         -- VimTeX configuration goes here, e.g.
+--     --         vim.g.vimtex_view_method = "zathura"
+--     --     end
+--     -- },
+--
+--
+-- 	-- Markdown preview
+-- 	{
+-- 		"iamcco/markdown-preview.nvim",
+-- 		build = function() vim.fn["mkdp#util#install"]() end,
+-- 	},
+--
+-- 	-- Syntax highlighting for kitty configuration
+-- 	{"fladson/vim-kitty"},
+--
+-- 	-- Trailing spaces
+-- 	{"ntpeters/vim-better-whitespace"},
+--
+--
+--
+--     -- DiffView plugin
+--     {"sindrets/diffview.nvim"},
+--
+--     {
+--         "hedyhli/outline.nvim",
+--         config = function()
+--             -- Example mapping to toggle outline
+--             vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+--             { desc = "Toggle Outline" })
+--
+--             require("outline").setup {
+--                 -- Your setup opts here (leave empty to use defaults)
+--             }
+--         end,
+--     },
+--
+--     {
+--         "nvim-neorg/neorg",
+--         lazy = false,
+--         version = "*",
+--         config = function()
+--             require("neorg").setup {
+--                 load = {
+--                     ["core.defaults"] = {},
+--                     ["core.concealer"] = {},
+--                     ["core.dirman"] = {
+--                         config = {
+--                             workspaces = {
+--                                 neorg = "~/neorg",
+--                             },
+--                             default_workspace = "neorg",
+--                         },
+--                     },
+--                 },
+--             }
+--             vim.wo.foldlevel = 99
+--             vim.wo.conceallevel = 2
+--         end,
+--     },
+--
+-- }, opts);
 
-    {
-        "hedyhli/outline.nvim",
-        config = function()
-            -- Example mapping to toggle outline
-            vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
-            { desc = "Toggle Outline" })
-
-            require("outline").setup {
-                -- Your setup opts here (leave empty to use defaults)
-            }
-        end,
-    },
-
-    -- Greyscale colorscheme
-    {"LuRsT/austere.vim"},
-
-    -- xCode colorscheme
-    {"lunacookies/vim-colors-xcode"},
-
-    {
-        "nvim-neorg/neorg",
-        lazy = false,
-        version = "*",
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.concealer"] = {},
-                    ["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                neorg = "~/neorg",
-                            },
-                            default_workspace = "neorg",
-                        },
-                    },
-                },
-            }
-            vim.wo.foldlevel = 99
-            vim.wo.conceallevel = 2
-        end,
-    },
-
-}, opts);
-
-require("eloi")
+require("default")
