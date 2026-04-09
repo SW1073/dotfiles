@@ -35,3 +35,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
 vim.opt.undofile = true
+
+-- Whitespace and stuff
+vim.o.list = true
+vim.o.listchars = 'tab:» ,lead: ,trail:•'
