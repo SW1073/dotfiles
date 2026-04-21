@@ -9,5 +9,19 @@ vim.lsp.config("clangd", {
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_markers = { ".clangd", "compile_commands.json", "compile_commands.yaml", "Makefile", ".git" },
 })
-
 vim.lsp.enable("clangd")
+
+
+-- vim.lsp.config("pyright", {
+--     cmd = {"pyright-langserver"},
+--     filetypes = { "py" },
+--     root_markers = { "Makefile", ".git" },
+-- })
+vim.lsp.enable("pyright")
+
+
+vim.lsp.config.bashls = {
+  cmd = { 'bash-language-server', 'start' },
+  filetypes = { 'bash', 'sh' }
+}
+vim.lsp.enable 'bashls'

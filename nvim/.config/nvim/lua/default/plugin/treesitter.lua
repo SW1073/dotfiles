@@ -1,10 +1,14 @@
 vim.pack.add({
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    {
+        src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        event = "BufReadPost",
+    },
 })
 
-require("nvim-treesitter").setup {
+require("nvim-treesitter").setup({
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "c",  "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "latex" },
+  ensure_installed = { "c", "python", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "latex" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -14,7 +18,7 @@ require("nvim-treesitter").setup {
   auto_install = true,
 
   -- List of parsers to ignore installing (or "all")
-  ignore_install = { "javascript" },
+  ignore_install = { },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -43,4 +47,4 @@ require("nvim-treesitter").setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-}
+})

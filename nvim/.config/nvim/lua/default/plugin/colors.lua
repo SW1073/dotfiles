@@ -9,6 +9,7 @@ vim.pack.add({
     { src = 'https://github.com/LuRsT/austere.vim'},
     { src = 'https://github.com/lunacookies/vim-colors-xcode' },
     { src = 'https://github.com/olimorris/onedarkpro.nvim' },
+    { src = 'https://github.com/Mofiqul/vscode.nvim' },
 })
 
 
@@ -152,12 +153,13 @@ function ConfigureKanagawa()
 end
 
 function ColorMyPencils(color)
-    color = color or "gruvbox"
+    -- color = color or "gruvbox"
     -- color = color or "github_dark_dimmed"
     -- color = color or "tokyonight"
     -- color = color or "kanagawa"
     -- color = color or "kanagawa-dragon"
     -- color = color or "gruber-darker"
+    color = color or "vscode"
 
     if color == "gruvbox" then
         ConfigureGruvbox()
