@@ -20,6 +20,9 @@ map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
 map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
 map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 
+-- Quickfix things uwu
+map("n", "<A-j>", "<cmd>cnext<CR>", opts)
+map("n", "<A-k>", "<cmd>cprev<CR>", opts)
 
 map('n', '<leader>rf', vim.lsp.buf.rename, {})
 
@@ -28,8 +31,8 @@ map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 map("n", ",,", "<Cmd>nohl<CR>", opts)
 
-map ("n", '<leader>y', '"+y', opts)
-map ("v", '<leader>y', '"+y', opts)
+map("n", '<leader>y', '"+y', opts)
+map("v", '<leader>y', '"+y', opts)
 
 map("n", "gl", vim.diagnostic.open_float, opts)
 

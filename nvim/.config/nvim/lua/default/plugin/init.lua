@@ -12,4 +12,11 @@ require("default.plugin.nvim-tree")
 require("default.plugin.telescope")
 require("default.plugin.treesitter")
 require("default.plugin.lsp")
+require("default.plugin.blink")
 
+-- Remove all inactive plugins
+local inactive_plugins = vim.iter(vim.pack.get())
+    :filter(function(x) return not x.active end)
+    :map(function(x) return x.spec.name end)
+    :totable()
+vim.pack.del(inactive_plugins)
