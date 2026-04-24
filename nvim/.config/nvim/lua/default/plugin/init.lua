@@ -1,6 +1,5 @@
 require("default.plugin.barbar")
 require("default.plugin.colors")
--- require("default.plugin.comment")
 require("default.plugin.gitblame")
 require("default.plugin.gitsigns")
 require("default.plugin.indent-blankline")
