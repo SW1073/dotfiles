@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Session name
+sn="tmp"
+
+# See if tmp session already exists
+if tmux has-session -t "$sn" 2>/dev/null; then
+    tmux attach-session -t "$sn"
+    exit
+fi
+
+# Prompt the user and check if they aborted
+target_path=$(fzf)
+if [[ -z "$target_path" ]]; then
+    echo "aborted"
+    exit
+fi
+target_path=$(pwd)/"$target_path"
+target_dir=$(dirname "$target_path")
+target_file=$(basename "$target_path")
+
+# Create new session with editor window
+tmux new-session -s "$sn:0" -d -c "$target_dir"
+# Create new window in said session
+# tmux new-window "$EDITOR $target_file" -t "$sn:1" -n bash -c "$target_dir"
+# Attach to editor window
+tmux attach-session -t "$sn:0" \; new-window "$EDITOR $target_file"
+# tmux attach-session -t "$sn:0"
