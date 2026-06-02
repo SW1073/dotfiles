@@ -22,12 +22,12 @@ order += "time"
 order += "volume master"
 
 wireless _first_ {
-    format_up = " 󰖩  %quality at %essid "
+    format_up = " 󰖩  %quality at %essid (%ip) "
     format_down = " 󰖩  down "
 }
 
 ethernet _first_ {
-    format_up = " 󰈀  %speed "
+    format_up = " 󰈀  %speed (%ip) "
     format_down = " 󰈀  down "
 }
 
