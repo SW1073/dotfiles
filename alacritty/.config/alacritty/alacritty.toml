@@ -2,10 +2,15 @@ general.import = ["~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"]
 
 [font]
 size = 14
-normal      = {family = "0xProto Nerd Font", style = "Regular"}
-bold        = {family = "0xProto Nerd Font", style = "Bold"}
-italic      = {family = "0xProto Nerd Font", style = "Italic"}
-bold_italic = {family = "0xProto Nerd Font", style = "Bold italic"}
+# 0xProto Nerd Font
+# JetBrainsMono Nerd Fond
+# 3270 Nerd Font Propo
+# IntoneMono Nerd Font Mono
+# IosevkaTerm Nerd Font
+normal      = {family = "IosevkaTerm Nerd Font", style = "Regular"}
+bold        = {family = "IosevkaTerm Nerd Font", style = "Bold"}
+italic      = {family = "IosevkaTerm Nerd Font", style = "Italic"}
+bold_italic = {family = "IosevkaTerm Nerd Font", style = "Bold italic"}
 
 [scrolling]
 history = 10000
@@ -15,7 +20,7 @@ multiplier = 3
 program = "/usr/bin/bash"
 
 [window]
-opacity = 0.9
+opacity = 0.85
 dimensions = { columns = 80, lines = 10 }
 class.general = "Alacritty"
 class.instance = "Alacritty"
