@@ -12,8 +12,6 @@ require('mason-lspconfig').setup()
 require('mason-tool-installer').setup({
     ensure_installed = {
         'clangd',
-        'pyright',
-        'svls',
     },
 })
 
@@ -26,12 +24,12 @@ require('mason-tool-installer').setup({
 
 -- Configure lsp-format and register autocomand to let it interact with the available lsp server
 require('lsp-format').setup()
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(args)
-        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-        require("lsp-format").on_attach(client, args.buf)
-    end,
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--     callback = function(args)
+--         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+--         require("lsp-format").on_attach(client, args.buf)
+--     end,
+-- })
 
 -- Fix for lua_ls warnings when in nvim configuration files
 vim.lsp.config('lua_ls', {

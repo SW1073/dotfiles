@@ -10,6 +10,7 @@ require("default.plugin.telescope")
 require("default.plugin.treesitter")
 require("default.plugin.lsp")
 require("default.plugin.blink")
+require("default.plugin.orgmode")
 
 -- Remove all inactive plugins
 local inactive_plugins = vim.iter(vim.pack.get())
