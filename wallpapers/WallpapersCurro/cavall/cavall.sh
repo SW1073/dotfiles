@@ -14,10 +14,10 @@ Y=$(shuf -i 1-$Y_SIZE -n 1)
 echo "[DBG] Decided position X: $X - and Y: $Y"
 
 # Create image
-# ffmpeg -i $IMG -i $CAVALL -frames:v 1 out.jpeg
 ffmpeg \
     -i $IMG \
-    -i $CAVALL \
-    -filter_complex "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'" out.jpeg
+    -i $CAVALL -filter_complex "overlay=$X:$Y" \
+    out.jpg
+echo "[DBG] Ran ffmpeg"
 
 # Put it as background
